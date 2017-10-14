@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Trayecto"
+        android:textSize="20dp"
+        android:layout_marginTop="5dp"
+        android:textAlignment="center"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:padding="@dimen/activity_horizontal_margin">
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Distancia:"
+            android:textSize="20dp"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:id="@+id/distance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="30km"
+            android:textSize="20dp"
+            android:textAlignment="textEnd"
+            android:layout_gravity="end"
+            android:layout_marginTop="5dp"/>
+
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:padding="@dimen/activity_horizontal_margin">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Duración: "
+            android:textSize="20dp"
+            android:layout_marginTop="2dp"/>
+
+        <TextView
+            android:id="@+id/duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="20min"
+            android:textSize="20dp"
+            android:textAlignment="textEnd"
+            android:layout_gravity="end"
+            android:layout_marginTop="2dp"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:padding="@dimen/activity_horizontal_margin">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Puntos:"
+            android:textSize="20dp"
+            android:layout_marginTop="2dp"
+            android:id="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/points"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="18"
+            android:textSize="20dp"
+            android:textAlignment="textEnd"
+            android:layout_gravity="end"
+            android:layout_marginTop="2dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:padding="@dimen/activity_horizontal_margin">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Experiencia:"
+            android:textSize="20dp"
+            android:layout_marginTop="2dp"/>
+
+        <TextView
+            android:id="@+id/exp_points"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="62"
+            android:textSize="20dp"
+            android:textAlignment="textEnd"
+            android:layout_gravity="end"
+            android:layout_marginTop="2dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="34"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -27,7 +27,7 @@
         </activity>
         <activity
             android:name=".perfil.view.PerfilView"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
             android:name=".summary.view.SummaryView"

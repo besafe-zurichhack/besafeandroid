@@ -24,7 +24,7 @@ public class DriveView extends AppCompatActivity {
 
         journeyData = new JourneyData();
 
-        endButton = (Button) findViewById(R.id.loginButton);
+        endButton = (Button) findViewById(R.id.endButton);
         endButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

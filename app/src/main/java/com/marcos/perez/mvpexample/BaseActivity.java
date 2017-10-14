@@ -92,9 +92,6 @@ public abstract class BaseActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             Intent anIntent = new Intent(getApplicationContext(), HomeView.class);
             startActivity(anIntent);
-        } else if (id == R.id.nav_login) {
-            Intent anIntent = new Intent(getApplicationContext(), LoginView.class);
-            startActivity(anIntent);
         }
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -26,7 +26,7 @@
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/startButton"
+        android:id="@+id/endButton"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:text="End"

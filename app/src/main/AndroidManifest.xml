@@ -11,18 +11,22 @@
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
         <activity
-        android:name=".home.view.HomeView"
-        android:theme="@style/AppTheme.NoActionBar">
-            >
+            android:name=".login.view.LoginView"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-        android:name=".login.view.LoginView"
-        android:theme="@style/AppTheme.NoActionBar">
+            android:name=".home.view.HomeView"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".drive.view.DriveView"
+            android:theme="@style/AppTheme">
+        </activity>
+
     </application>
 
 </manifest>

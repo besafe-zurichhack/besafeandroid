@@ -1,15 +1,36 @@
 package com.marcos.perez.mvpexample.DataModels;
 
+import android.location.Location;
+
+import java.util.ArrayList;
 import java.util.Date;
 
 public class JourneyData {
-    private Date startDate, endDate;
+    private Date startTime, endTime;
+    private ArrayList<Location> checkPoints;
 
     public JourneyData() {
-        startDate = new Date();
+        startTime = new Date();
+        checkPoints = new ArrayList<>();
+    }
+
+    public void addPoint(Location point) {
+        checkPoints.add(point);
     }
 
     public void endJourney() {
-        endDate = new Date();
+        endTime = new Date();
+    }
+
+    public Date getStartTime() {
+        return startTime;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public ArrayList<Location> getCheckPoints() {
+        return checkPoints;
     }
 }

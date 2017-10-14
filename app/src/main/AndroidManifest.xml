@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.marcos.perez.mvpexample">
-    <uses-permission android:name="android.permisssion.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permisssion.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permisssion.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <application
     android:allowBackup="true"
     android:icon="@mipmap/ic_launcher"
@@ -29,6 +27,10 @@
         </activity>
         <activity
             android:name=".perfil.view.PerfilView"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity
+            android:name=".summary.view.SummaryView"
             android:theme="@style/AppTheme">
         </activity>
 

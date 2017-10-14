@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "604954716786",
+    "firebase_url": "https://zurich-707e5.firebaseio.com",
+    "project_id": "zurich-707e5",
+    "storage_bucket": "zurich-707e5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604954716786:android:3d5ba82d855457aa",
+        "android_client_info": {
+          "package_name": "com.marcos.perez.mvpexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "604954716786-v7thonkruf5pjgohlaofvuk0o66a1q5t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4-lx_GKHfbPfcjc2oazCq7Zq_TfCw7TE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -17,6 +17,7 @@ import android.widget.FrameLayout;
 
 import com.marcos.perez.mvpexample.home.view.HomeView;
 import com.marcos.perez.mvpexample.login.view.LoginView;
+import com.marcos.perez.mvpexample.perfil.view.PerfilView;
 
 public abstract class BaseActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -91,6 +92,11 @@ public abstract class BaseActivity extends AppCompatActivity
 
         if (id == R.id.nav_home) {
             Intent anIntent = new Intent(getApplicationContext(), HomeView.class);
+            startActivity(anIntent);
+        }
+
+        if (id == R.id.nav_profile) {
+            Intent anIntent = new Intent(getApplicationContext(), PerfilView.class);
             startActivity(anIntent);
         }
 

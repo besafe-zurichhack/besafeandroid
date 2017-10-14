@@ -24,6 +24,10 @@
             android:name=".drive.view.DriveView"
             android:theme="@style/AppTheme">
         </activity>
+        <activity
+            android:name=".summary.view.SummaryView"
+            android:theme="@style/AppTheme">
+        </activity>
 
     </application>
 

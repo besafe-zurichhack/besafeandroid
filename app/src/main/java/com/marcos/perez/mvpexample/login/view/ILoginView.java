@@ -6,6 +6,5 @@ package com.marcos.perez.mvpexample.login.view;
 
 public interface ILoginView {
 
-    public void showToast();
-
+    void loadHomeActivity();
 }

@@ -6,6 +6,4 @@ package com.marcos.perez.mvpexample.home.view;
 
 public interface IHomeView {
 
-    public void showToast();
-
 }

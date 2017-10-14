@@ -18,4 +18,14 @@ public class LoginPresenter implements ILoginPresenter {
         this.mModel = (ILoginModel) new LoginModel(this);
     }
 
+    @Override
+    public void login(String username, String password) {
+        mModel.login(username, password);
+    }
+
+    @Override
+    public void loadHomeActivity() {
+        mView.loadHomeActivity();
+    }
+
 }

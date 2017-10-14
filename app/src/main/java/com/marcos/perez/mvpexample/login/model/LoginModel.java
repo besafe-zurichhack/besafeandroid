@@ -11,4 +11,9 @@ public class LoginModel implements ILoginModel {
     public LoginModel(ILoginPresenter loginPresenter) {
         this.mPresenter = loginPresenter;
     }
+
+    @Override
+    public void login(String username, String password) {
+        mPresenter.loadHomeActivity();
+    }
 }

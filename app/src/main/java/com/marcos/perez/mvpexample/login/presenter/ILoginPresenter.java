@@ -5,4 +5,7 @@ package com.marcos.perez.mvpexample.login.presenter;
  */
 
 public interface ILoginPresenter {
+    void login(String username, String password);
+
+    void loadHomeActivity();
 }

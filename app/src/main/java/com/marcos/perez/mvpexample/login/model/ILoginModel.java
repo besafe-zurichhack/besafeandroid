@@ -5,4 +5,5 @@ package com.marcos.perez.mvpexample.login.model;
  */
 
 public interface ILoginModel {
+    void login(String username, String password);
 }

@@ -12,6 +12,7 @@ import com.marcos.perez.mvpexample.Utils;
 import com.marcos.perez.mvpexample.drive.view.DriveView;
 import com.marcos.perez.mvpexample.home.presenter.HomePresenter;
 import com.marcos.perez.mvpexample.home.presenter.IHomePresenter;
+import com.marcos.perez.mvpexample.perfil.view.PerfilView;
 
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;

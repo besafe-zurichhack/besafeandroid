@@ -11,18 +11,17 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.google.android.gms.maps.model.LatLng;
 import com.marcos.perez.mvpexample.DataModels.JourneyData;
+import com.marcos.perez.mvpexample.DataModels.JourneySummary;
 import com.marcos.perez.mvpexample.PermissionUtils;
 import com.marcos.perez.mvpexample.R;
+import com.marcos.perez.mvpexample.UtilsDemo;
 import com.marcos.perez.mvpexample.drive.presenter.DrivePresenter;
 import com.marcos.perez.mvpexample.summary.view.SummaryView;
-
-import java.util.ArrayList;
-import java.util.Date;
 
 import static com.marcos.perez.mvpexample.Utils.LOCATION_PERMISSION_REQUEST_CODE;
 
@@ -32,8 +31,10 @@ public class DriveView extends AppCompatActivity {
     private JourneyData journeyData;
     private LocationManager locationManager;
     private int i = 0;
-    private ArrayList<LatLng> journey = new ArrayList<>();
+    private UtilsDemo utilsDemo = new UtilsDemo();
     DrivePresenter mPresenter;
+    private Handler handler;
+    private Runnable runnable;
 
 
     @Override
@@ -47,6 +48,7 @@ public class DriveView extends AppCompatActivity {
         endButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                journeyData.endJourney();
                 mPresenter.endJourney(journeyData);
             }
         });
@@ -54,26 +56,6 @@ public class DriveView extends AppCompatActivity {
         initialize(this);
 
         enableMyLocation();
-        try {
-            //locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 10f, this);
-            final Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-
-                @Override
-                public void run() {
-                    if (i < journey.size()) {
-                        onLocationChanged(journey.get(i));
-                        i++;
-                    }
-
-                    handler.postDelayed(this, 10000);
-                }
-            }, 5000);
-        } catch (java.lang.SecurityException ex) {
-
-        } catch (IllegalArgumentException ex) {
-
-        }
     }
 
     private void initialize(DriveView view){
@@ -92,6 +74,19 @@ public class DriveView extends AppCompatActivity {
             if (locationManager == null) {
                 locationManager = (LocationManager) getApplicationContext().getSystemService(Context.LOCATION_SERVICE);
             }
+            //locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 10f, this);
+            handler = new Handler();
+            runnable = new Runnable() {
+
+                @Override
+                public void run() {
+                    onLocationChanged(utilsDemo.get(i));
+                    i++;
+
+                    handler.postDelayed(this, 5000);
+                }
+            };
+            handler.postDelayed(runnable, 5000);
         }
     }
 
@@ -111,13 +106,17 @@ public class DriveView extends AppCompatActivity {
         }
     }
 
-    public void loadSummaryActivity() {
+    public void loadSummaryActivity(JourneySummary js) {
         Intent anIntent = new Intent(getApplicationContext(), SummaryView.class);
+        anIntent.putExtra("time", js.getTimeElapsed());
+        anIntent.putExtra("score", js.getScore());
+        anIntent.putExtra("distance", js.getDistanceTraveled());
         startActivity(anIntent);
         this.finish();
     }
 
-    public void onLocationChanged(LatLng location) {
+    public void onLocationChanged(Location location) {
+        Log.v("location", String.valueOf(location.getLatitude()) + ',' + String.valueOf(location.getLongitude()));
         journeyData.addPoint(location);
     }
 
@@ -128,6 +127,7 @@ public class DriveView extends AppCompatActivity {
         if (locationManager != null) {
             try {
                 //locationManager.removeUpdates(this);
+                handler.removeCallbacks(runnable);
             } catch (Exception ex) {
             }
         }

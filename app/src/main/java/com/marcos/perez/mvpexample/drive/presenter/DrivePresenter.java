@@ -1,6 +1,7 @@
 package com.marcos.perez.mvpexample.drive.presenter;
 
 import com.marcos.perez.mvpexample.DataModels.JourneyData;
+import com.marcos.perez.mvpexample.DataModels.JourneySummary;
 import com.marcos.perez.mvpexample.drive.model.DriveModel;
 import com.marcos.perez.mvpexample.drive.view.DriveView;
 
@@ -21,8 +22,8 @@ public class DrivePresenter {
         mModel.endJourney(journeyData);
     }
 
-    public void loadSummaryActivity() {
-        mView.loadSummaryActivity();
+    public void loadSummaryActivity(JourneySummary js) {
+        mView.loadSummaryActivity(js);
     }
 
 }

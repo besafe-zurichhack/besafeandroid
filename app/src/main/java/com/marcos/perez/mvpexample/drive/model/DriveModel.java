@@ -1,6 +1,9 @@
 package com.marcos.perez.mvpexample.drive.model;
 
+import android.util.Log;
+
 import com.marcos.perez.mvpexample.DataModels.JourneyData;
+import com.marcos.perez.mvpexample.DataModels.JourneySummary;
 import com.marcos.perez.mvpexample.drive.presenter.DrivePresenter;
 
 /**
@@ -14,6 +17,8 @@ public class DriveModel {
     }
 
     public void endJourney(JourneyData journeyData) {
-        mPresenter.loadSummaryActivity();
+        long time = journeyData.getEndTime().getTime() - journeyData.getStartTime().getTime();
+        JourneySummary js = new JourneySummary((int)time/50000, time, time/15000);
+        mPresenter.loadSummaryActivity(js);
     }
 }

@@ -6,15 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.marcos.perez.mvpexample.BaseActivity;
 import com.marcos.perez.mvpexample.DataModels.JourneyData;
 import com.marcos.perez.mvpexample.R;
-import com.marcos.perez.mvpexample.Utils;
 import com.marcos.perez.mvpexample.drive.presenter.DrivePresenter;
-import com.marcos.perez.mvpexample.home.view.HomeView;
-import com.marcos.perez.mvpexample.login.presenter.ILoginPresenter;
-import com.marcos.perez.mvpexample.login.presenter.LoginPresenter;
-import com.marcos.perez.mvpexample.login.view.ILoginView;
 
 public class DriveView extends AppCompatActivity {
     private final static String TAG = "DriveView";
@@ -47,8 +41,8 @@ public class DriveView extends AppCompatActivity {
 
 
     public void loadResumeActivity() {
-        Intent anIntent = new Intent(getApplicationContext(), ResumeView.class);
-        startActivity(anIntent);
-        this.finish();
+        //Intent anIntent = new Intent(getApplicationContext(), ResumeView.class);
+        //startActivity(anIntent);
+        //this.finish();
     }
 }

@@ -8,6 +8,7 @@ import java.util.Date;
 public class JourneyData {
     private Date startTime, endTime;
     private ArrayList<Location> checkPoints;
+    private double distance;
 
     public JourneyData() {
         startTime = new Date();
@@ -32,5 +33,9 @@ public class JourneyData {
 
     public ArrayList<Location> getCheckPoints() {
         return checkPoints;
+    }
+
+    public void setDistance(double distance) {
+        this.distance = distance;
     }
 }

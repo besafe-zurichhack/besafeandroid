@@ -2,8 +2,8 @@ package com.marcos.perez.mvpexample.home.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.view.View;
-import android.widget.Button;
 
 import com.marcos.perez.mvpexample.BaseActivity;
 import com.marcos.perez.mvpexample.R;
@@ -11,11 +11,9 @@ import com.marcos.perez.mvpexample.Utils;
 import com.marcos.perez.mvpexample.drive.view.DriveView;
 import com.marcos.perez.mvpexample.home.presenter.HomePresenter;
 import com.marcos.perez.mvpexample.home.presenter.IHomePresenter;
-import com.marcos.perez.mvpexample.perfil.view.PerfilView;
 
 public class HomeView extends BaseActivity implements IHomeView{
-    private final static String TAG = "HomeView";
-    private Button startButton;
+    private final static String TAG = "Home";
     IHomePresenter mPresenter;
 
     @Override
@@ -23,11 +21,12 @@ public class HomeView extends BaseActivity implements IHomeView{
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_home_view);
         super.setNavigationItemClicked(Utils.HOME_ACTIVITY_NBR);
+        super.setTitle(TAG);
 
-        startButton = (Button) findViewById(R.id.startButton);
-        startButton.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 Intent anIntent = new Intent(getApplicationContext(), DriveView.class);
                 startActivity(anIntent);
             }

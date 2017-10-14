@@ -45,6 +45,10 @@ public abstract class BaseActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+    public void setTitle(String title) {
+        getSupportActionBar().setTitle(title);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,11 +92,13 @@ public abstract class BaseActivity extends AppCompatActivity
 
         if (id == R.id.nav_home) {
             Intent anIntent = new Intent(getApplicationContext(), HomeView.class);
+            anIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(anIntent);
         }
 
         if (id == R.id.nav_profile) {
             Intent anIntent = new Intent(getApplicationContext(), PerfilView.class);
+            anIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(anIntent);
         }
 

@@ -11,6 +11,7 @@ import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
+import com.marcos.perez.mvpexample.BaseActivity;
 import com.marcos.perez.mvpexample.R;
 import com.marcos.perez.mvpexample.Utils;
 
@@ -20,8 +21,8 @@ import java.util.Map;
  * Created by Joan Manel on 14/10/2017.
  */
 
-public class PerfilView extends AppCompatActivity{
-    private final static String TAG = "PerfilView";
+public class PerfilView extends BaseActivity {
+    private final static String TAG = "Profile";
     private TextView nameText;
     private TextView surnameText;
     private TextView eMailText;
@@ -33,6 +34,8 @@ public class PerfilView extends AppCompatActivity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_perfil_view);
+        super.setNavigationItemClicked(Utils.PERFIL_ACTIVITY_NBR);
+        super.setTitle(TAG);
         /*nameText = (TextView) findViewById(R.id.nameText);
         surnameText = (TextView) findViewById(R.id.surnameText);
         eMailText = (TextView) findViewById(R.id.eMailText);

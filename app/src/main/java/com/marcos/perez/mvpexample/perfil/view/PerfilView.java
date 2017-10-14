@@ -33,19 +33,19 @@ public class PerfilView extends AppCompatActivity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_perfil_view);
-
-        nameText = (TextView) findViewById(R.id.nameText);
+        /*nameText = (TextView) findViewById(R.id.nameText);
         surnameText = (TextView) findViewById(R.id.surnameText);
         eMailText = (TextView) findViewById(R.id.eMailText);
-        pointsText = (TextView) findViewById(R.id.pointsText);
+        pointsText = (TextView) findViewById(R.id.pointsText);*/
 
-        mRef = new Firebase("https://zurich-22317.firebaseio.com/users");
+
+        /*mRef = new Firebase("https://zurich-22317.firebaseio.com/users");
 
         mRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                Map<String, String> map = dataSnapshot.getValue(Map.class);
+                /*Map<String, String> map = dataSnapshot.getValue(Map.class);
 
                 String name = map.get("Name");
                 String surname = map.get("Surname");
@@ -64,6 +64,6 @@ public class PerfilView extends AppCompatActivity{
             public void onCancelled(FirebaseError firebaseError) {
 
             }
-        });
+        });*/
     }
 }

@@ -14,6 +14,7 @@ import android.widget.FrameLayout;
 
 import com.marcos.perez.mvpexample.home.view.HomeView;
 import com.marcos.perez.mvpexample.perfil.view.PerfilView;
+import com.marcos.perez.mvpexample.travellist.view.TravellistView;
 
 public abstract class BaseActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -101,6 +102,13 @@ public abstract class BaseActivity extends AppCompatActivity
             anIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(anIntent);
         }
+
+        if (id == R.id.nav_journeys) {
+            Intent anIntent = new Intent(getApplicationContext(), TravellistView.class);
+            anIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(anIntent);
+        }
+
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

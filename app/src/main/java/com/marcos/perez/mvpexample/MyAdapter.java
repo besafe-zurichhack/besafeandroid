@@ -31,7 +31,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(MyAdapter.ViewHolder holder, int position) {
         final JourneySummary trayecto =  values.get(position);
-        holder.travelDuration.setText(String.valueOf(trayecto.getTimeElapsed()));
+        //holder.travelDuration.setText(String.valueOf(trayecto.getTimeElapsed()));
         holder.travelDistance.setText(String.valueOf(trayecto.getDistanceTraveled()));
         holder.travelPoints.setText(trayecto.getScore());
 
@@ -39,7 +39,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return values.size();
+        return this.values.size();
     }
 
     public MyAdapter(List<JourneySummary> myDataset) {

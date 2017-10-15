@@ -9,6 +9,8 @@ public class JourneySummary {
     private long timeElapsed;
     private double distanceTraveled;
 
+    public JourneySummary(){}
+
     public JourneySummary(int score, long timeElapsed, double distanceTraveled) {
         this.score = score;
         this.timeElapsed = timeElapsed;
@@ -25,5 +27,15 @@ public class JourneySummary {
 
     public double getDistanceTraveled() {
         return distanceTraveled;
+    }
+
+    public void setScore(int score){
+        this.score=score;
+    }
+    public void setTimeElapsed(long timeElapsed){
+        this.timeElapsed=timeElapsed;
+    }
+    public void setDistanceTraveled(double distanceTraveled){
+        this.distanceTraveled=distanceTraveled;
     }
 }

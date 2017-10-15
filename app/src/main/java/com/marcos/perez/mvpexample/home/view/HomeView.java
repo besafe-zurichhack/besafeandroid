@@ -28,6 +28,7 @@ public class HomeView extends BaseActivity implements IHomeView {
     SharedPreferences preferences;
 
     TextView userNameProfile;
+    TextView userTrayectos;
 
     String storedPreference;
     Firebase mref;
@@ -43,18 +44,26 @@ public class HomeView extends BaseActivity implements IHomeView {
         storedPreference = preferences.getString("user_id", null);
 
         userNameProfile = (TextView) findViewById(R.id.user_profile_name);
+        userTrayectos   = (TextView) findViewById(R.id.userTrayectos) ;
         Log.v("E_VALUE", "Name: " + storedPreference);
         mref = new Firebase("https://zurich-707e5.firebaseio.com/");
 
         mref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Map<String, String> map = dataSnapshot.child("users").child(storedPreference).getValue(Map.class);
+                Map<String, String> mapName = dataSnapshot.child("users").child(storedPreference).getValue(Map.class);
+                int count = 0;
+                for(DataSnapshot snapTrayectos : dataSnapshot.child("travels").child(storedPreference).getChildren()){
+                    count++;
+                }
 
-                String name = map.get("fName");
+                String name = mapName.get("fName");
+                int trayectos = count;
+                String puntos = mapName.get("fName");
                 Log.v("E_VALUE", "Name: " + name);
 
-                userNameProfile.setText(userNameProfile.getText() + " " + name);
+                userNameProfile.setText("Hola "+name);
+                userTrayectos.setText(String.valueOf(trayectos));
             }
 
             @Override
